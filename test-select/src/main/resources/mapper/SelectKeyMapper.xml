@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"  >
+<mapper namespace="com.example.mapper.SelectKeyMapper">
+
+  <insert id="insert">
+      <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="empno">
+          select SEQ_DEPT_NO.nextval as empno from dual
+      </selectKey>
+      insert  into EMP1(empno, ename, job, mgr, hiredate, sal, comm, deptno)
+      values (#{empno},#{ename},#{job},#{mgr},sysdate,#{sal},#{comm},#{deptno})
+  </insert>
+</mapper>

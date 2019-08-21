@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@//localhost:1521/ORACLE
+    username: scott
+    password: scott
+
+
+mybatis:
+  mapper-locations: mapper/*.xml
